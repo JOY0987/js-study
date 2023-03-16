@@ -1,10 +1,10 @@
 alert('~ 재미있는 UP&DOWN 게임 ~');
 alert('[ 1 ~ 50 사이의 무작위 숫자를 5번 안에 맞춰보세요!! ]');
 
-var an = Math.floor(Math.random() * 50 + 1);
+var an = Math.floor(Math.random() * 50) + 1;
 var boo = true;
 
-while (true) {
+while (boo) {
     for (var i = 5; i >= 0; i--) {
         if (boo === false) {
             break;
@@ -18,11 +18,9 @@ while (true) {
             if (n < an) {
                 alert('UP!!');
                 alert(`기회가 ${i-1}번 남았습니다.`);
-                continue;
             } else if (n > an) {
                 alert('DOWN!!');
                 alert(`기회가 ${i-1}번 남았습니다.`);
-                continue;
             } else {
                 alert('딩동댕~~~!!');
                 boo = false;

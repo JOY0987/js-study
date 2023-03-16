@@ -1,24 +1,24 @@
 alert('~ 재미있는 UP&DOWN 게임 ~');
 alert('난이도를 설정하세요 ~~~!');
-var lv = +prompt('1. 상 (기회 3번) | 2. 중 (기회 6번) | 3. 하 (기회 10번)');
+var level = +prompt('1. 상 (기회 3번) | 2. 중 (기회 6번) | 3. 하 (기회 10번)');
 
 alert('[ 1 ~ 50 사이의 무작위 숫자를 맞춰보세요!! ]');
 
-var an = Math.floor(Math.random() * 50 + 1);
-var boo = true;
+var an = Math.floor(Math.random() * 50) + 1;
+var boolean = true;
 var i;
 
-if(lv === 3) {
+if(level === 3) {
     i = 10;
-} else if (lv === 2) {
+} else if (level === 2) {
     i = 6;
 } else {
     i = 3;
 } 
 
-while (true) {
+while (boolean) {
     for (i; i >= 0; i--) {
-        if (boo === false) {
+        if (boolean === false) {
             break;
         }
         if(i === 0) {
@@ -37,7 +37,7 @@ while (true) {
                 continue;
             } else {
                 alert('딩동댕~~~!!');
-                boo = false;
+                boolean = false;
                 break;
             }
         } else {

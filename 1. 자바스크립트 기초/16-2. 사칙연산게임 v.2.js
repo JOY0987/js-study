@@ -4,10 +4,12 @@
 alert('~ 재미있는 사칙연산 게임 ~');
 alert('[즐겁게 문제를 푸시다가 지겨우면 0을 누르세요~]');
 
+var ca=0;
+var ia=0;
 
 while(true) {
-    var x = Math.floor(Math.random *20 + 1);
-    var y = Math.floor(Math.random *20 + 1);
+    var x = Math.floor(Math.random() * 20) + 1;
+    var y = Math.floor(Math.random() * 20) + 1;
     var an;
     var n = 0;
     n++;
@@ -26,12 +28,15 @@ while(true) {
     
     if(an === (x+y)) {
         alert('정답입니다!');
+        ca++;
         continue;
-    } if(an === 0) {
+    } else if(an === 0) {
         alert('게임을 종료합니다!');
         break;
     } else {
         alert('틀렸어요~');
+        ia++;
         continue;
     }
 }
+alert(`정답횟수: ${ca}회, 틀린횟수: ${ia}회`);
