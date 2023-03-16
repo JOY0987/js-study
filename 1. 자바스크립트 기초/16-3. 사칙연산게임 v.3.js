@@ -3,6 +3,23 @@
 
 alert('~ 재미있는 사칙연산 게임 ~');
 alert('[즐겁게 문제를 푸시다가 지겨우면 0을 누르세요~]');
+// 난이도 설정
+var level = +prompt(
+    `~ 난이도를 설정합니다 ~
+    [ 1. 상 (1~100) | 2. 중 (1~50) | 3. 하 (1~20) ]`
+    );
+
+var MAX_NUM;
+
+if(level === 1) {
+    MAX_NUM = 100;
+} else if (level === 2) {
+    MAX_NUM = 50;
+} else if (level === 3) {
+    MAX_NUM = 20;
+} else {
+    MAX_NUM = 9999; // 이스터에그
+}
 
 var ca = 0;
 var ia = 0;
@@ -13,8 +30,8 @@ var answer;
 
 while (true) {
 
-    var x = Math.floor(Math.random() * 20) + 1;
-    var y = Math.floor(Math.random() * 20) + 1;
+    var x = Math.floor(Math.random() * MAX_NUM) + 1;
+    var y = Math.floor(Math.random() * MAX_NUM) + 1;
     var an;
     var n = 0;
 
