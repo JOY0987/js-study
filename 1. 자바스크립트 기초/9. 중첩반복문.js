@@ -1,4 +1,4 @@
-// 구구단 2단 출력
+// 구구단 2단부터 9단까지 출력
 
 
 for (var level = 2; level <= 9; level++) {
@@ -10,11 +10,13 @@ for (var level = 2; level <= 9; level++) {
 
 }
 
+// 구구단 3단 출력
+var line = 1;
 
-// while (line <= 9) {
-//     console.log(`3 x ${line} = ${3 * line}`);
-//     line++;
-// }
+while (line <= 9) {
+    console.log(`3 x ${line} = ${3 * line}`);
+    line++;
+}
 
 
 // 반복문을 해체하는 연습하기

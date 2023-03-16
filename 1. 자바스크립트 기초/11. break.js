@@ -17,10 +17,10 @@ for (var i = 0; i < 50000; i++) {
     var rn = Math.floor(Math.random() * 10) + 1;
     console.log(rn);
     if (rn === 3) {
-        console.log(`반복문 종료 : ${i}`);
+        console.log(`반복문 종료 : ${i}`); // 몇 번만에 종료되었는지
         break;
     }
 
-    console.log('메롱'); // rn이 3이 되어 break가 실행되면, 밑에 있는 메롱도 출력되지 않습니다.
-
+    console.log('메롱'); 
+    // rn이 3이 되어 break가 실행되면, 밑에 있는 메롱도 출력되지 않습니다.
 }
