@@ -1,17 +1,19 @@
+// 의도하지 않았는데 연산자 등에 의해서 자동으로 형변환이 일어나는 경우
+
 var n1 = 10;
 var n2 = '20';
 
 console.log(n1 + n2); // 1020
 
-var n3 = n1 + '';
+var n3 = n1 + ''; // 이건 명시적 타입변환!
 console.log(typeof n3); // 문자열 10
 
 var n4 = '100' * 55; 
 console.log(n4); // 5500
 
 
-var n5 = +'99';
-console.log(n5);
+var n5 = +'99'; // 이건 명시적 타입변환!
+console.log(n5); // number 99
 
 console.log('============================');
 
