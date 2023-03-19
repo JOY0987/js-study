@@ -91,7 +91,7 @@ while (true) {
 
     
     if (gameEndFlag) {
-        var exitFlag = confirm('한 판더?');
+        var exitFlag = confirm('한 판더?'); // 확인, 취소 키
         if (!exitFlag) {
             alert('수고하셨습니다!');
             break;
