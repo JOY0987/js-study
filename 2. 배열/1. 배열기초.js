@@ -27,10 +27,11 @@ var fruits = [
     '레몬'
 ]; // 배열 리터럴
 
-console.log(typeof fruits); // 배열 전체 내부 확인
-console.log(fruits); // 브라우저 -> [[Prototype]] : Array(0)    
+console.log(typeof fruits); // 배열의 타입 : object
+console.log(fruits); // 배열 전체 내부 확인, 브라우저에서는 -> [[Prototype]] : Array(0)    
 console.log(`배열의 데이터 수: ${fruits.length}`);
 // 배열들은 데이터가 딱붙어있기 때문에 길이라고 표현한다.
+
 // 배열 데이터 참조(reference)
 console.log(`첫번째 데이터: ${fruits[0]}`);
 console.log(`마지막 데이터: ${fruits[fruits.length-1]}`);
@@ -42,6 +43,7 @@ console.log(fruits);
 
 // 수정 시 주의사항
 // 해당 index 에 값이 있는지 확인하고 수정해야합니다.
+
 // fruits[4] = '초콜릿';
 // console.log(fruits);
 
@@ -50,10 +52,10 @@ console.log(fruits);
 var target = '바나나';
 // 찾았는지에 대한 여부
 var findFlag = false;
-for (var i = 0; i < fruits.length; i++) {
+for (var i = 0; i < fruits.length; i++) { 
     // console.log(fruits[i]);
 
-    if(fruits[i] !== target) {
+    if(fruits[i] === target) {
         console.log(`${target} 과일은 존재함!`);
         findFlag = true;
         break;

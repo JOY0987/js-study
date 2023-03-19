@@ -25,9 +25,9 @@ while (tvxq.length > 0) {
         alert(`${delTarget}은(는) 잘못된 이름입니다.\n다시 입력하세요!`);
     }
 
-    // if (tvxq.length === 0) {
-    //     alert('모든 멤버가 삭제되었습니다.');
-    //     break;
-    // }
+    if (tvxq.length === 0) {
+        alert('모든 멤버가 삭제되었습니다.');
+        break;
+    }
 
 }

@@ -66,7 +66,7 @@ var concatedArr = arr1.concat(arr2);
 console.log(concatedArr);
 
 
-// includes() : 배열의 특정 데이터가 존재하는지 확인
+// includes() : 배열에 특정 데이터가 존재하는지 확인
 console.log('====================================');
 
 var resultFlag = foodList.includes('닭꼬치'); // 있어? => true of false
@@ -90,6 +90,6 @@ console.log(foodList);
 foodList.splice(2, 0, '아이스크림', '떡볶이'); // 2번부터 차례대로 아이스크림, 떡볶이 삽입
 console.log(foodList);
 
-// 2번부터 끝까지 다 지워
+// 2번 다음부터 끝까지 다 지워
 foodList.splice(2);
 console.log(foodList);
