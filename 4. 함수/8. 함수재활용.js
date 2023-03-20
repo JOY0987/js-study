@@ -1,3 +1,5 @@
+var NOT_FOUND = -1;
+
 // 배열의 특정 데이터의 인덱스를 구하는 함수
 function myIndexOf(arr, element) { // arr배열 내 element의 index를 알려줄게
 
@@ -6,7 +8,7 @@ function myIndexOf(arr, element) { // arr배열 내 element의 index를 알려�
             return i;
         }
     }
-    return -1;
+    return NOT_FOUND;
 }
 
 
@@ -19,7 +21,7 @@ function myIncludes(arr, element) {
     // }
     // return false;
 
-    return myIndexOf(arr, element) !== -1;
+    return myIndexOf(arr, element) !== NOT_FOUND;
 }
 
 

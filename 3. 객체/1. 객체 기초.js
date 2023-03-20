@@ -40,7 +40,7 @@ console.log(dog);
 // 프로퍼티 참조 2
 console.log('===================================');
 console.log(dog.injection);
-console.log(dog['injection']);
+console.log(dog['injection']); // 이건 키가 문자열이 아니라서 둘 다 가능!
 
 // key를 변수에 저장
 var fv = 'favorite';
@@ -59,7 +59,7 @@ dog['injection'] = false;
 
 
 // 프로퍼티 동적 추가
-cat.owner = '김철수'; // owner 키가 없었으니 추가가 됨
+cat.owner = '김철수'; // 추가
 cat.owner = '박영희'; // 수정
 console.log(cat);
 
@@ -72,7 +72,7 @@ console.log(cat);
 // 수정하기 전에 있는지 확인하고 진행해야함
 console.log('===================================');
 
-// key를 반드시 문자열로 표기해야함!!
+// in 연산자는 key를 반드시 문자열로 표기해야함!!
 var ageFlag = 'age' in cat; // true or false
 console.log(ageFlag);
 
@@ -80,17 +80,19 @@ console.log(ageFlag);
 if (!('master' in cat)) {
     cat['master'] = '김또또';
 }
+console.log(cat);
+
 
 
 
 // 객체를 순회하는 반복문
-console.log('===================================');
+console.log('====!!!===============================');
 
 // key를 반복해서 추출해줌
 for (var k in dog) {
     // console.log(k); // undefined
     // console.log(typeof k); // string
-    console.log(dog[k]); // 문자열 키를 참조할 때는 꼭 대괄호를 붙임
+    console.log(dog[k]); // 문자열 키가 포함되어 있으니 대괄호 표기법 사용
 }
 
 
