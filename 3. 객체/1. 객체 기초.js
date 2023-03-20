@@ -28,7 +28,7 @@ console.log(cat.age); // cat의 age
 console.log(cat.favorite);
 console.log(dog.favorite[0]); // dog의 첫번째 favorite 
 
-// 데이터 타입이 중요한 이유
+// 데이터 타입
 dog.favorite - cat.age; // 타입 달라서 불가
 dog.age - cat.age; // 연산 가능
 dog.favorite.push('꼬리 흔들기'); // 가능
@@ -54,7 +54,8 @@ dog.age = 4;
 cat.favorite[1] = '실뭉치';
 
 dog['injection'] = false;
-
+// dog.injection = false; // 위와 같음
+// console.log(dog);
 
 
 // 프로퍼티 동적 추가
@@ -108,7 +109,7 @@ var articles = {
             title: '가위바위보', //글제목
             writer: '김짱껨뽀',  //작성자
             content: '다덤벼 ^^', //글내용
-            viewCount: 53, //조회수
+            viewCount: 53, //조회수0
             recomm: 10, //추천수
             regDate: '21-12-07' //작성일자
         }, // 0번 index 
