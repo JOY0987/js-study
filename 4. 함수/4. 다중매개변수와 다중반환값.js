@@ -65,12 +65,14 @@ console.log(`덧셈 결과: ${result.plus}`);
 console.log(`뺄셈 결과: ${result.minus}`);
 console.log(`곱셈 결과: ${result.multiply}`);
 console.log(`나눗셈 결과: ${result.divide}`);
+
+// 배열일때
 // console.log(`덧셈 결과: ${result[0]}`);
 // console.log(`뺄셈 결과: ${result[1]}`);
 // console.log(`곱셈 결과: ${result[2]}`);
 // console.log(`나눗셈 결과: ${result[3]}`);
 
-result.push('메롱'); // 가능
-result.pop(); // 가능
-result[0].push('메롱'); // 불가능
-result[0] * 3; // 가능
+// result.push('메롱'); // 가능
+// result.pop(); // 가능
+// result[0].push('메롱'); // 불가능
+// result[0] * 3; // 가능
