@@ -16,20 +16,20 @@ console.log(`r2 : ${r2}`);
 
 // 리턴이 없는 함수 (void 함수)
 // 안 쓸거니까 값 들고오지마라
-function multi(n1, n2) { // 소비함수 (consumer 함수)
+// 소비함수 (consumer 함수) 라고도 함
+function multi(n1, n2) { 
     var result = n1 * n2;
     console.log(`${n1} x ${n2} = ${result}`);
+    // 출력만하고 값 리턴하지 마세여
 }
 
 // 리턴이 없는 함수는 변수에 담지말고, 다른 함수에 인수로 전달 X
 var r3 = multi(10, 3); // 리턴이 없어서 r3에 저장 불가
-
 console.log(`r3 : ${r3}`); // undefined
 
-multi(add(4,3), add(5,5));
-
-var r4 = add(multi(3,2), 40);
+var r4 = add(multi(3,2), 40); // multi(3,2)가 undefined
 console.log(`r4 : ${r4}`); // NaN
+
 
 // return 탈출문
 function callName(nickName) {
@@ -52,14 +52,14 @@ function stopLoop(flag) {
     while (true) {
         var flag = prompt('명령어를 입력하세요!');
         if (flag === '멈춰') {
-            break;
+            break; // 또는 return;
         }
         alert(flag);
     }
 
     alert('수고용!~~');
-    // break => 반복문만 끝내기 때문에 나옴
-    // return => 함수 자체를 끝내기 때문에 안나옴, 좀 더 강력!
+    // break 사용시 => 반복문만 끝내기 때문에 알림이 뜸
+    // return 사용시 => 함수 자체를 끝내기 때문에 알림이 안뜸, 좀 더 강력!
 }
 
 stopLoop();

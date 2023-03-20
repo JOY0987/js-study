@@ -1,5 +1,5 @@
 // 1. 함수 정의 - 만든다
-// 어떤 것을 재활용할 지 창고에 넣어두는 개념
+// 재활용할 코드들을 뭉쳐서 창고에 넣어두는 개념
 
 function happyGreeting(yourName) {
     console.log(`${yourName}님 안녕하세요! 방가방가!`);

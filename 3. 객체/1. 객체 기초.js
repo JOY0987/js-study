@@ -23,6 +23,7 @@ console.log(typeof dog);
 
 
 // 객체에 저장된 데이터 참조 (참조연산자)
+// 점 표기법
 console.log(dog.name); // ~. = ~의
 console.log(cat.age); // cat의 age
 console.log(cat.favorite);
@@ -38,9 +39,10 @@ console.log(dog);
 
 
 // 프로퍼티 참조 2
+// 대괄호 표기법
 console.log('===================================');
 console.log(dog.injection);
-console.log(dog['injection']); // 이건 키가 문자열이 아니라서 둘 다 가능!
+console.log(dog['injection']);
 
 // key를 변수에 저장
 var fv = 'favorite';
@@ -69,7 +71,6 @@ console.log(cat);
 
 
 // 프로퍼티 존재 유무 확인
-// 수정하기 전에 있는지 확인하고 진행해야함
 console.log('===================================');
 
 // in 연산자는 key를 반드시 문자열로 표기해야함!!
@@ -90,9 +91,9 @@ console.log('====!!!===============================');
 
 // key를 반복해서 추출해줌
 for (var k in dog) {
-    // console.log(k); // undefined
-    // console.log(typeof k); // string
-    console.log(dog[k]); // 문자열 키가 포함되어 있으니 대괄호 표기법 사용
+    console.log(k); // undefined
+    console.log(typeof k); // string => key가 문자열로 저장됨
+    console.log(dog[k]);
 }
 
 

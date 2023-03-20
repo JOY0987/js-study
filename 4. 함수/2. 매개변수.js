@@ -3,7 +3,7 @@
     description: x ~ y까지의 총합을 구하는 함수
     parameter:
         - begin: 누적총합의 시작값
-        - begin: 누적총합의 시작값
+        - end: 누적총합의 끝값
     return: 계산된 총합
 */
 
