@@ -28,5 +28,5 @@ const a = 10;
 const b = 20;
 
 for (let i = 0; i < 5; i++) {
-    
+
 }
