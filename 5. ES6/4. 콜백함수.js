@@ -13,7 +13,8 @@ function showOddNumber(n) {
   }
 }
 
-// 둘이 if 조건식 안의 0, 1만 다르니까 단축시키자
+// Q : 짝수랑 홀수 둘 다 출력할 수 있게 해조
+// A : 둘이 if 조건식 안의 나머지만 다르니까 나머지를 파라미터로 만들어줄게~
 function showOddOrEvenNumber(n, delim) {
 
   for (let i = 1; i <= n; i++) {
@@ -21,7 +22,8 @@ function showOddOrEvenNumber(n, delim) {
   }
 }
 
-// 배수 출력하는 것도 만들어줭
+// Q : 배수 출력하는 것도 만들어조
+// A : 그럼 나누는 숫자를 파라미터로 만들어줄게~
 function showMultipleNumber(n, multiNumber) {
 
   for (let i = 1; i <= n; i++) {
@@ -29,8 +31,10 @@ function showMultipleNumber(n, multiNumber) {
   }
 }
 
-// 6의 배수이면서 12의 배수가 아닌것도 만들어줭
-// if 안에 조건식을 인수로 전달하면 될텐데 !
+// Q : 6의 배수이면서 12의 배수가 아닌것도 볼 수 있게 만들어조
+// A : 내가 값 출력해주는 함수는 만들어줄게...
+//     대신 네가 인수에 원하는 코드를 넣어서 직접 전달해 ; ;
+// ===> 파라미터에 함수가 들어올 수 있게됨!
 const code = function (n) {
   return n % 3 === 0;
 };
@@ -44,12 +48,52 @@ function showNumber(n, code) {
   }
 }
 
-// showNumber(50, n % 3 === 0); // n is not defined (지역변수)
-// 코드를 인수로 바로 전달할 수 없음..
-// 그러니 코드를 함수로 감싸서 보내자
-showNumber(50, function() {return n % 3 === 0;})
+// showNumber(50, n % 3 === 0); 
+// 1. n is not defined (showMultipleNumber함수의 지역변수임!)
+// 2. n이 전역변수라 해도, boolean 값이 전달됨
+// ===> 그럼 코드를 이름이 없는 함수로 감싸서 통째로 보내자!
+
+showNumber(20, n => n % 3 === 0);
+// showNumber(20, function(n) {return n % 3 === 0;}); <== 이걸 화살표 함수로 줄인것
+// 밑의 함수 표현식과도 같다...
+// const code = function(n) {
+//   return n % 3 === 0;
+// };
+
+// showNumber(50, test);
+// function test(n) {
+//   return n % 3 === 0;
+// }
+// 이렇게도 가능하지만, 조건을 수정할때 test 함수를 찾아가야함
 
 
 // showEvenNumber(10);
 // showOddNumber(15);
 showOddOrEvenNumber(10, 0); // 1부터 10까지 짝수 출력
+
+
+
+// 함수 내에 각자 원하는 개별 기능을 추가하는 데에도 도움이 되는 콜백함수!!
+function showMessage(message, howTo) {
+  // 공통기능
+  document.body.style.background = 'gray';
+
+  setTimeout(() => {
+      // 개별기능
+      howTo(message);
+
+      // 공통기능
+      alert('하하호호!');
+
+  }, 500);
+}
+
+// 함수 호출하면서 인수 function에 내가 원하는 거 넣기!
+showMessage('메롱메롱', function (m) {
+  const answer = prompt(m);
+  if (answer === '즐')
+      alert('반사!');
+  else 
+      alert('뭐냐~~');
+  
+});
