@@ -33,7 +33,3 @@ console.log(`idx: ${idx}`);
 
 var flag = myIncludes(foodList, '족발');
 console.log(`flag: ${flag}`);
-
-var foodList = ['짜장면', '탕수육', '고추잡채', '족발'];
-
-var idx = myIndexOf(foodList, '탕수육');
