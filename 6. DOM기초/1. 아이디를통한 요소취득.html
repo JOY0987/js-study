@@ -10,21 +10,29 @@
     
     <ul>
         <li id="apple">사과</li>
-        <li id="banana" style="background: greenyellow;">바나나</li>
+        <li id="banana">바나나</li>
         <li id="grape">포도</li>
         <li id="peach">복숭아</li>
     </ul>
 
     <script>
-        // console.log(document.body.firstElementChild);
+        // body 밑의 태그들은 어떻게 접근해야하는가?
+        // console.log(document.body.firstElementChild); // ==> 너무 긴데 다른 방법 없을까?
 
-        const $banana = document.getElementById('banana');
-              // 태그에는 $ 를 붙여주는 게 관례
+        const $banana = document.getElementById('banana'); 
+            // html 요소를 리턴
+            // 태그, 요소노드가 들어있는 객체에는 $ 를 붙여주는 게 관례
+
+        // banana 의 id 객체를 가져오려면?
+        console.log($banana.attributes.id);
+        console.log($banana.attributes[0]);
+
+        // banana 의 id 값을 가져오려면?
         console.log($banana.attributes.id.value);
 
-        // banana.attributes.id.value = '수고용';
+        // banana.attributes.id.value = '수고용'; // 요소의 값을 바꿀 수도 있음
 
-        $banana.style.background = 'red';
+        $banana.style.background = 'red'; // 인라인 스타일
 
         // id 가 grape인 요소노드를 취득하여
         // 배경색상을 violet으로 가로길이를 fit-content 변경
