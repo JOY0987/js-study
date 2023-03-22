@@ -39,10 +39,10 @@ const code = function (n) {
   return n % 3 === 0;
 };
 
-function showNumber(n, code) {
+function showNumber(n, callback) {
 
   for (let i = 1; i <= n; i++) {
-    if (code(i)) {
+    if (callback(i)) {
       console.log(i);
     }
   }
@@ -56,7 +56,7 @@ function showNumber(n, code) {
 showNumber(20, n => n % 3 === 0);
 // showNumber(20, function(n) {return n % 3 === 0;}); <== 이걸 화살표 함수로 줄인것
 // 밑의 함수 표현식과도 같다...
-// const code = function(n) {
+// const callback = function(n) {
 //   return n % 3 === 0;
 // };
 
@@ -73,13 +73,13 @@ showOddOrEvenNumber(10, 0); // 1부터 10까지 짝수 출력
 
 
 
-// 함수 내에 각자 원하는 개별 기능을 추가하는 데에도 도움이 되는 콜백함수!!
+// 함수 내에 각자 원하는 개별 기능을 추가하기 위해 사용하는 콜백함수!!
 function showMessage(message, howTo) {
   // 공통기능
   document.body.style.background = 'gray';
 
   setTimeout(() => {
-      // 개별기능
+      // 개별기능 => 콜백함수로 맘대로 바꿀 수 있음!
       howTo(message);
 
       // 공통기능
