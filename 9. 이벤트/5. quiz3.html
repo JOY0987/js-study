@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Document</title>
+    <style>
+        .dropdown {
+            width: 100px;
+            margin: 0;
+        }
+        .btn {
+            margin: 0;
+            background-color: black;
+            width: 100px;
+            height: 40px;
+            color: white;
+            border: 2px solid red;
+        }
+        #drop-content {
+            flex-direction: column;
+            border-top: 2px solid white;
+        }
+        #drop-content > a {
+            box-sizing: border-box;
+            border-bottom: 2px solid white; 
+            padding-top: 7px;
+            width: 100px;
+            height: 40px;
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button class="btn">Drop</button>
+        <div style="display: none;" id="drop-content">
+            <a href="#">Menu1</a>
+            <a href="#">Menu2</a>
+            <a href="#">Menu3</a>
+            <a href="#">Menu4</a>
+            <a href="#">Menu5</a>
+        </div>
+    </div>
+
+    <script>
+        // 버튼에 hover 하면 드롭컨텐트 박스 보이게
+        const $btn = document. querySelector('.btn');
+        const $dropContent = $btn.nextElementSibling;
+        const MY_STYLE = 'style';
+
+        $btn.onmouseover = () => {
+            $dropContent.setAttribute(MY_STYLE, 'display: flex;');
+        };
+        $btn.onmouseout = () => {
+            $dropContent.setAttribute(MY_STYLE, 'display: none;');
+        };
+        $dropContent.onmouseover = () => {
+            $dropContent.setAttribute(MY_STYLE, 'display: flex;');
+        };
+        $dropContent.onmouseout = () => {
+            $dropContent.setAttribute(MY_STYLE, 'display: none;');
+        };
+    </script>
+</body>
+
+</html>

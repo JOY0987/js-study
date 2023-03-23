@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="fr apple">사과</li>
+        <li class="fr banana">바나나</li>
+        <li class="fr grape">포도</li>
+    </ul>
+
+    <div class="box">
+
+    </div>
+
+    <script>
+        // ul 요소노드를 취득
+        const $fruits = document.getElementById('fruits');
+
+        console.log($fruits.children);
+        // 자식노드를 취득할때 쿼리셀렉터, 겟엘레먼트 안해도됨!
+        // 부모인 $fruits (ul)과 연결되어 있기 때문
+        // childnodes : 공백까지 배열요소로 포함시키기 때문에 사용하지않기
+        
+
+        const $children = [...$fruits.children];
+
+        console.log($children);
+
+        // const $first = $children[0];
+        // const $last = $children[$children.length-1];
+    
+
+        const $first = $fruits.firstElementChild;
+        const $last = $fruits.lastElementChild;
+        // .firstChild : 0번 인덱스인 공백(text)이 선택되므로 사용하지않기
+        
+        $first.style.fontSize = '2em';
+        $last.style.transform = 'rotate(180deg)';
+        $last.style.width = 'fit-content';
+
+
+        const $box = document.querySelector('.box');
+
+        console.log($box.hasChildNodes()); // true
+        // div 태그 안에 있는 공백도 자식요소로 취급해서 true 리턴
+        // TIP) has, is 붙은 함수는 거의 다 boolean 값 리턴, 존재유무를 물어보는 게 대부분이라
+    
+        // 자식 요소의 유무 확인
+        // 0 이면 false, 1이상이면 true, 논리변환을 위해 !! 붙이기
+        console.log(!!$box.children.length);
+        
+        // 자식 요소의 유무 확인 함수 만들기
+        function hasChildren($target) {
+            return !!$target.children.length;
+        } 
+        console.log(hasChildren($box));
+
+    </script>
+</body>
+</html>

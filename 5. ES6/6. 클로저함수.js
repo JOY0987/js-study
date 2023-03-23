@@ -7,7 +7,8 @@ console.log(`n: ${n}`); // 30
 
 
 
-// 자바스크립트의 함수는 함수를 리턴할 수 있음 (일급객체)
+// 자바스크립트의 함수는 함수를 리턴할 수 있음 (일급객체의 특징)
+// 이런 형태를 클로저라고 함
 /*
 function calculator(n1, n2) {
 
@@ -19,7 +20,7 @@ function calculator(n1, n2) {
     // return add(); => n1 + n2 값 리턴
 }
 
-// 화살표 함수로 만들기
+// 화살표 함수로 줄이기
 const calculator = (n1, n2) => () => n1 + n2;
 */
 
@@ -47,8 +48,8 @@ const calculator = (n1, n2) => () => n1 + n2;
 // console.log(increase()); // 3??
 
 
-
-// const increaseClosure = () => {
+// 클로저
+// const increaseClosure = () => { 
 //     let count = 0; // 지역 변수
 
 //     // 헬퍼함수
@@ -58,21 +59,19 @@ const calculator = (n1, n2) => () => n1 + n2;
 // }
 
 // const increase = increaseClosure();
+// increaseClosure : 카운트를 올릴 수 있는 '보조함수를 갖다주는' 역할
 
 // console.log(increase());
 // console.log(increase());
-// count = 999;
+// count = 999; // count 변수는 함수를 통해서만 조정할 수 있음
 // console.log(increase()); // 3
 
 
 
-
-
-
-
+// 위같은 과정은 귀찮고 함수를 정의하자마자 콜하고 싶다 => 즉시 실행 함수 사용
 // 즉시 실행 함수 : 정의와 동시에 호출
-// 재활용 불가능
-const result = (function(n1, n2) {
+// 함수의 이름이 없어서 재활용 불가능
+const result = ((n1, n2) => {
     return n1 + n2;
 })(5, 8);
 console.log(result); 
@@ -81,7 +80,7 @@ console.log(result);
 
 const increase = (() => {
     let count = 0; // 지역변수
-    return () => ++count;
+    return () => ++count; // 안에 있는 보조함수
 })();
 
 console.log(increase());

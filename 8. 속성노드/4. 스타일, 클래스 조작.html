@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: red;
+        }
+
+        .green {
+            color: greenyellow;
+            background: green;
+        }
+
+        .blue {
+            color: aqua;
+            background: blue;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box green" style="font-weight: 700;">Hello</div>
+
+    <button id="add">클릭!</button>
+
+    <script>
+        // 인라인 스타일 조작
+        const $box = document.querySelector('.box');
+
+        $box.style.fontStyle = 'italic';
+        // $box.style.display = 'none';
+
+
+        // 클래스 조작
+        // className 쓰지말기
+        // 하나하나 제어할 수 있는 classList를 쓰기
+        // classList는 value 키가 있는 유사배열
+
+        $box.classList.add('circle'); // 원래 클래스 유지 + circle 클래스 추가
+        $box.classList.add('aaa', 'bbb', 'ccc'); // 한번에 여러 클래스 추가
+
+        $box.classList.remove('green');
+        $box.classList.remove('aaa', 'bbb', 'ccc'); // 한번에 여러 클래스 삭제
+
+        $box.classList.add('green');
+        $box.classList.replace('green', 'blue'); // 앞의 클래스를 뒤의 클래스로 변경
+
+        // 클래스 존재 유무확인
+        console.log($box.classList.contains('box')); // true
+        console.log($box.classList.contains('apple')); // false
+
+        // toggle : 현재 해당 클래스가 없으면 추가
+        //          있으면 삭제
+        const CLASSNAME = 'circle'; // 여러번 쓰니까 상수처리
+        $box.classList.toggle(CLASSNAME); // 삭제
+        $box.classList.toggle(CLASSNAME); // 추가
+
+        // toggle 응용
+        const $btn = document.getElementById('add');
+        $btn.onclick = e => {
+            $box.classList.toggle(CLASSNAME);
+        }
+    </script>
+</body>
+
+</html>

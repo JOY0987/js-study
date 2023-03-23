@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="fruits">
+        <li>사과</li>
+    </ul>
+
+    <script>
+        // 사과 밑에 바나나를 추가하고싶다
+        // 이러한 추가, 생성 명령은 부모를 타겟팅해서 요청!!
+        const $fruits = document.getElementById('fruits');
+
+        // 스크립팅 코드로 태그 만들기
+        // li태그 생성 : <li></li>
+        const $newLi = document.createElement('li'); // createElement('태그명')
+
+        // 텍스트 추가 : <li>바나나</li>
+        $newLi.textContent = '바나나';
+
+        // 새로운 노드를 자식으로 추가하는 명령
+        $fruits.appendChild($newLi);
+
+        // 여기까지가 ㄹㅇ중요
+        
+
+        // 함수로 만들어서 쓰기
+        // 1. 태그 이름과 텍스트를 전달받으면 태그를 생성하는 함수
+        function makeTag(tagName, text = '') {
+            const $newTag = document.createElement(tagName);
+            if (text) $newTag.textContent = text;
+            // text 파라미터에 값이 있으면 태그의 자식요소로 넣기     
+            return $newTag;
+        }
+
+        // 2. 부모태그를 알려주면 자식을 추가해주는 함수
+        function appendNewTag($parent, $target) {
+            $parent.appendChild($target);
+        }
+
+        // 1+2. 만들면서 추가하는 함수
+        function append({$parent, tagName, text}) {
+            // const {$parent, tagName, text} = items;
+            // 위처럼 구조분해할당을 해야하지만, 파라미터에서 바로 할 수도 있음
+            appendNewTag($parent, makeTag(tagName, text));
+        }
+
+        // 텍스트만 바뀌면 반복문으로 자식요소 생성할 수도 있음!
+        const fruitNames = [
+            '바나나', '딸기', '포도'
+            , '자몽', '오렌지', '레몬'
+        ];
+
+        fruitNames.forEach(fn => {
+
+            append({
+                $parent: $fruits,
+                tagName: 'li',
+                text: fn
+            });
+        });
+
+    </script>
+</body>
+
+</html>

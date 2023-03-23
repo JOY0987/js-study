@@ -3,11 +3,11 @@
 
 /*
 const increase = (() => {
-    let count  = 0;
+    let count  = 0; // increase 클로저의 카운트 변수
     return () => ++count;
 })();
 const decrease = (() => {
-    let count  = 0;
+    let count  = 0; // decrease 클로저의 카운트 변수
     return () => --count;
 })();
 
@@ -15,6 +15,8 @@ console.log(increase()); // 1
 console.log(increase()); // 2
 console.log(decrease()); // -1
 */
+
+// 한 클로저 안에 increase와 decrease를 모두 넣어주어야함
 
 /*
 function counterClosure() {
@@ -27,9 +29,9 @@ function counterClosure() {
     }
 
     return {
-        increase, //: increase, 키 밸루 이름 같으니 생략
+        increase, //: increase, 키 밸루 이름 같으니 생략 (ES6)
         decrease //: decrease
-    };
+    }; // 객체를 리턴
 }
 
 const counter  = counterClosure();

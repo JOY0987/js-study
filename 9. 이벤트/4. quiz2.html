@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .triangle {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 10px 5px;
+            border-color: transparent transparent #1a9900 transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="lunches" class="menu">
+        <span class="title"><span class="triangle"></span>추천 메뉴(Click Me!)</span>
+        <ul>
+            <li>돈까스</li>
+            <li>군만두</li>
+            <li>볶음밥</li>
+            <li>마파두부</li>
+        </ul>
+    </div>
+
+    <script>
+        const $menuBtn = document.querySelector('.title');
+        const $menuList = $menuBtn.nextElementSibling;
+        // console.log($menuList);
+        $menuBtn.onclick = () => {
+            $menuList.classList.toggle('hide');
+        };
+    </script>
+</body>
+
+</html>
