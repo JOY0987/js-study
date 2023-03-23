@@ -55,9 +55,10 @@
         console.log(!!$box.children.length);
         
         // 자식 요소의 유무 확인 함수 만들기
-        function hasChildren($target) {
-            return !!$target.children.length;
-        } 
+        // function hasChildren($target) {
+        //     return !!$target.children.length;
+        // } 
+        const hasChildren = $target => !!$target.children.length;
         console.log(hasChildren($box));
 
     </script>

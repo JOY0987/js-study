@@ -20,10 +20,10 @@
         $newLi.textContent = '망고';
 
         // insertBefore(추가할 요소, 이 요소 앞에 추가)
-        // $fruits.insertBefore($newLi, $fruits.firstElementChild); 
-        // $fruits.insertBefore($newLi, $fruits.firstElementChild); 
-        // $fruits.insertBefore($newLi, $fruits.firstElementChild); 
-        $fruits.insertBefore($newLi, $fruits.firstElementChild); 
+        // $fruits.insertBefore($newLi, $fruits.lastElementChild);
+        // $fruits.insertBefore($newLi, $fruits.children[1]);
+        // $fruits.insertBefore($newLi, document.querySelector('#fruits li:first-child'));
+        $fruits.insertBefore($newLi, $fruits.firstElementChild.nextElementSibling);
 
         // 노드 이동
         const [$apple , $mango, $banana, $grape] 
