@@ -52,22 +52,32 @@
     </div>
 
     <script>
-        // 버튼에 hover 하면 드롭컨텐트 박스 보이게
+
+        /*
+            mouseover, mouseout     : 버블링 있음
+            mouseenter, mouseleave  : 버블링 없음
+        */
+
         const $btn = document. querySelector('.btn');
         const $dropContent = $btn.nextElementSibling;
         const MY_STYLE = 'style';
 
+        const mouseover 
+            = content => content.setAttribute(MY_STYLE, 'display: flex;');
+        const mouseout 
+            = content => content.setAttribute(MY_STYLE, 'display: none;');
+
         $btn.onmouseover = () => {
-            $dropContent.setAttribute(MY_STYLE, 'display: flex;');
+            mouseover($dropContent);
         };
         $btn.onmouseout = () => {
-            $dropContent.setAttribute(MY_STYLE, 'display: none;');
+            mouseout($dropContent);
         };
         $dropContent.onmouseover = () => {
-            $dropContent.setAttribute(MY_STYLE, 'display: flex;');
+            mouseover($dropContent);
         };
         $dropContent.onmouseout = () => {
-            $dropContent.setAttribute(MY_STYLE, 'display: none;');
+            mouseout($dropContent);
         };
     </script>
 </body>

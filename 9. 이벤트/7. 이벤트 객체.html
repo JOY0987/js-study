@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>아무 곳이나 클릭하세요!</p>
+    <em class="msg"></em>
+
+    <hr><hr><hr>
+
+    <input type="text" id="text">
+    <span class="show"></span>
+
+    <script>
+        document.onclick = function(e) {
+                                // ({x, y}) 로도 디스트럭처링 가능
+            // alert('!!');
+            // console.log(e);
+            // console.log(`x: ${e.x} y: ${e.y}`);
+            
+            // 디스트럭처링
+            const {x, y} = e;
+
+            // 클릭한 곳의 좌표를 화면에 띄우기
+            const $em = document.querySelector('.msg');
+            $em.textContent = `x: ${e.x} y: ${e.y}`;
+        };
+
+        const $textInput = document.querySelector('[type=text]');
+        // console.log($textInput);
+
+        $textInput.addEventListener('keyup', e => {
+            // console.log(e);
+
+            const $show = document.querySelector('.show');
+            if(e.key === 'Enter') {
+                $show.textContent = $textInput.value;
+                $textInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
