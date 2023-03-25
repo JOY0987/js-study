@@ -24,13 +24,13 @@
         const TXT_HIDE = 'hide';
         const $txt = document.querySelector('.text');
         // console.log($txt);
-        const $btn = document.getElementById('hider');
         $btn.onclick = () => {
+            const $btn = document.getElementById('hider');
             if($txt.classList.contains(TXT_HIDE)) {
-                $txt.classList.toggle(TXT_HIDE);
+                $txt.classList.add(TXT_HIDE);
                 $btn.textContent = '텍스트 숨기기!';
             } else {
-                $txt.classList.toggle(TXT_HIDE);
+                $txt.classList.remove(TXT_HIDE);
                 $btn.textContent = '텍스트 보이기!';
             }
         };
