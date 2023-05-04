@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="load">서버에서 회원정보 불러오기</button>
+
+    <section class="info">
+        <ul class="content"></ul>
+    </section>
+
+    <script>
+        // <비동기 통신> : POSTMAN 과 비슷! 요청해도 화면이 깜빡이지 않고 요청만 전송됨
+
+        // 버튼 클릭 이벤트
+        const $loadBtn = document.getElementById('load');
+        $loadBtn.onclick = e => {
+
+            // # http 비동기 요청을 서버로 보내는 방법
+            // 1. XMLHttpRequest 객체를 생성
+            const xhr = new XMLHttpRequest();
+
+            // 2. 요청방식과 요청 URI를 설정
+            xhr.open('GET', 'http://localhost:5000/users');
+
+            // 3. 요청 전송
+            xhr.send();
+
+            // 4. 응답정보 확인
+            xhr.onload = e => {
+                // 응답 데이터 확인
+                // console.log(xhr.response);
+                const responseJson = xhr.response;
+                console.log(responseJson[0]);
+
+                // 1. JSON -> JS로 변환
+                // JSON.parse()
+                // 2. JS -> JSON 변환
+                // JSON.stringify()
+
+                // responseJson 을 userList 객체로 변환
+                const userList = JSON.parse(responseJson);
+                // console.log(userList[0].userName);
+
+                // 렌더링
+                const $ul = document.querySelector('.content');
+
+                let liString = '';
+
+                for (const user of userList) {
+                    console.log(user);
+                    const {id, account, userName, address} = user;
+                    liString += `<li># 계정명: ${account}, 이름: ${userName}, 주소: ${address}</li>`;
+                }
+                $ul.innerHTML = liString;
+            };
+        };
+
+    </script>
+</body>
+</html>
