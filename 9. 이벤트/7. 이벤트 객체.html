@@ -30,16 +30,16 @@
             $em.textContent = `x: ${e.x} y: ${e.y}`;
         };
 
-        const $textInput = document.querySelector('[type=text]');
-        // console.log($textInput);
+        const $textInput = document.querySelector('[type="text"]'); // CSS 속성 선택자 사용
+        // console.log($textInput); 태그를 받아오면 항상 원하는 게 맞는지 확인해보장
 
         $textInput.addEventListener('keyup', e => {
-            // console.log(e);
-
+            
             const $show = document.querySelector('.show');
             if(e.key === 'Enter') {
                 $show.textContent = $textInput.value;
                 $textInput.value = '';
+                console.log(e);
             }
         });
     </script>

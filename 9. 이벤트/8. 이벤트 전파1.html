@@ -38,14 +38,17 @@
 
         const $apple = $fruits.firstElementChild;
 
-        $apple.addEventListener('click', e => {
-            console.log('apple의 클릭이벤트 발생!');
-        });
-
         $fruits.addEventListener('click', e => {
             console.log('ul의 클릭이벤트 발생!');
             console.log(e.target.tagName, ' - 눌렀음!');
+            console.log(e);
         });
+
+        $apple.addEventListener('click', e => {
+            console.log('apple의 클릭이벤트 발생!');
+            // console.log(e);
+        });
+
     </script>
 </body>
 
